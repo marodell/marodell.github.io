@@ -37,5 +37,5 @@ now="$(date +'%d-%m-%Y')"
 
 LAST_UPDATED="_includes/lastupdated.html"
 
-rm LAST_UPDATED
-echo "$now" > LAST_UPDATED
+rm $LAST_UPDATED
+echo "$now" > $LAST_UPDATED
