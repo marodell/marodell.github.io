@@ -78,6 +78,16 @@
 		margin-top: 8px;
 		font-size: 1.2rem;
 
+		.combined {
+			// @todo move to mixin <https://css-tricks.com/snippets/css/a-guide-to-flexbox/>
+			-webkit-box-flex: 1;
+			-moz-box-flex: 1;
+			-webkit-flex: 1;
+			-ms-flex: 1;
+			flex: 1;
+			display: inline-block;
+		}
+
 		@each $key, $value in $colour-map {
 			&.#{$key} {
 				@for $i from 0 through 8 {

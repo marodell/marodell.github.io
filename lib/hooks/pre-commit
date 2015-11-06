@@ -32,10 +32,12 @@ rm $JS_TEMP
 # add the file to the git base
 git add $JS_COMBINED_FILE
 
+
+// @todo move to lastupdated.sh
 now="$(date)"
 now="$(date +'%d-%m-%Y')"
 
-LAST_UPDATED="_includes/lastupdated.html"
+LAST_UPDATED="_includes/lastupdated"
 
 rm $LAST_UPDATED
 echo "$now" > $LAST_UPDATED
