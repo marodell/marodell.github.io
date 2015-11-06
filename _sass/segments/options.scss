@@ -1,0 +1,31 @@
+/**
+ * Sass for options section in segments page
+ */
+
+@import 'segments/colours';
+
+.options {
+	.colours {
+		height: 58px;
+		text-align: center;
+	}
+
+	.pick {
+		border: 4px solid $background;
+		cursor: pointer;
+		display: inline-block;
+		height: 50px;
+		margin: 0 5px;
+		width: 50px;
+		
+		&.selected {
+			border-color: $text;
+		}
+
+		@each $key, $value in $colour-map {
+			&.#{$key} {
+				background-color: $value;
+			}
+		}
+	}
+}

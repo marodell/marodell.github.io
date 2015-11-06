@@ -1,0 +1,95 @@
+---
+layout:		default
+title:		Segments
+include:	segments
+---
+<!--
+requires
+	IE10+
+	FF21+
+
+unsupported broswers:
+	Opera mini
+
+@todo limit to 2 segments for mobile?
+-->
+<section id="segments" class="segments">
+	<div id="segRail" class="seg-rail">
+		{% for i in (0..7) %}
+			<div class="seg-display ani-slow" data-index="{{ i }}">
+				{% include assets/images/7-segment.svg %}
+			</div>
+		{% endfor %}
+	</div>
+	<div id="segOverlayLeft" class="seg-overlay seg-left">
+		<span id="chevronLeft" class="chevron chevron-left ani-quick" title="Move left"></span>
+	</div>
+	<div id="segOverlayRight" class="seg-overlay seg-right">
+		<span id="chevronRight" class="chevron chevron-right ani-quick" title="Move right"></span>
+	</div>
+</section>
+<section id="options" class="options">
+	<div id="optionsColours" class="colours">
+		{% for colour in site.segments.colours %}
+			<span id="coloursPick{{ colour | capitalize }}" class="pick {{ colour }}" data-colour="{{colour}}"></span>
+		{% endfor %}
+	</div>
+</section>
+<section id="inputs" class="inputs">
+	<div id="inputsLetters" class="letters">
+		{% for i in (0..3) %}
+			<div id="viewLetter{{ i }}" class="view" data-view="{{ i }}">
+
+			{% for letter in site.segments.letters %}
+				<span id="letter{{ letter }}" class="letter ani-quick" data-letter="{{ letter }}">{{ letter }}</span>
+			{% endfor %}
+
+			</div>
+		{% endfor %}
+	</div>
+	<div id="inputsBinary" class="binary">
+		{% for i in (0..3) %}
+			<div id="viewBinary{{ i }}" class="view ani-quick" data-view="{{ i }}">0b00000000</div>
+		{% endfor %}
+	</div>
+	<div id="inputsHex" class="hex">
+		{% for i in (0..3) %}
+			<div id="viewHex{{ i }}" class="view ani-quick" data-view="{{ i }}">0x00</div>
+		{% endfor %}
+	</div>
+	<div id="inputsHexCombined" class="hex-combined">
+		<span class="combined ani-quick">0x00000000</span>
+	</div>
+</section>
+<section id="config" class="config">
+	<form id="configForm" class="config-form" action="#">
+		<div id="configOrder" class="order radio">
+			<!-- h2? -->
+			<div class="config-header">Segment order</div>
+			<div class="input-wrapper">
+				<label for="order-1">
+					<input id="order-1" type="radio" name="order" value="1" checked>
+					DP&ndash;A
+				</label>
+				<label for="order-0">
+					<input id="order-0" type="radio" name="order" value="0">
+					A&ndash;DP
+				</label>
+			</div>
+		</div>
+		<div id="configActive" class="active radio">
+			<!-- h2? is this the right word? -->
+			<div class="config-header">Active state</div>
+			<div class="input-wrapper">
+				<label for="active-low">
+					<input id="active-low" type="radio" name="active" value="1" checked>
+					Active-Low
+				</label>
+				<label for="active-high">
+					<input id="active-high" type="radio" name="active" value="0">
+					Active-High
+				</label>
+			</div>
+		</div>
+	</form>
+</section>

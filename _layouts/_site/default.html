@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>{{ page.title }}</title>
+		<meta name="description" content="foo">
+		<meta name="keywords" content="bar">
+
+		{% if page.content == 'segments' %}
+			<link rel="stylesheet" href="assets/styles.css">
+		{% else %}
+			<link rel="stylesheet" href="assets/styles.css">
+		{% endif %}
+	</head>
+	<body>
+		<header id="headerContainer" class="header-container">{% include header.html %}</header>
+		<main id="main" class="main">
+			<article id="article" class="article">{{ content }}</article>
+		</main>
+		<footer id="footerContainer" class="footer-container">{% include footer.html %}</footer>
+
+		{% if page.content == 'segments' %}
+			<script src="/assets/app.js"></script>
+		{% else %}
+			<script src="/assets/app.js"></script>
+		{% endif %}
+		
+	</body>
+</html>

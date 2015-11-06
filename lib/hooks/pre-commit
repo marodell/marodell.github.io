@@ -1,0 +1,41 @@
+#!/bin/bash
+# based on <http://www.yearofmoo.com/2011/04/minify-css-and-js-with-git-hooks.html>
+
+# @todo move to jsmin.sh
+# directory of the JS files
+JS_DIR="_includes/assets/js/segments"
+
+# these are the paths to the final combined files that you want to have in the end
+JS_COMBINED_FILE="_includes/assets/js/segments.min.js"
+
+# These files are your CSS and JS files you want to combine together
+JS_FILES=( segment.js )
+
+# path to temp file
+JS_TEMP="$JS_DIR/_min.js"
+
+# clear the files
+> $JS_COMBINED_FILE
+
+# run thru the JS files
+for F in ${JS_FILES[@]}; do
+    cat "$JS_DIR/$F" >> $JS_TEMP
+done
+
+# compress it
+# @todo license
+./lib/JSMin/jsmin <$JS_TEMP >$JS_COMBINED_FILE "(c) 2015 Matthew Dowdell <marosdell@gmail.com>"
+
+# remove the temp file
+rm $JS_TEMP
+
+# add the file to the git base
+git add $JS_COMBINED_FILE
+
+now="$(date)"
+now="$(date +'%d-%m-%Y')"
+
+LAST_UPDATED="_includes/lastupdated.html"
+
+rm LAST_UPDATED
+echo "$now" > LAST_UPDATED

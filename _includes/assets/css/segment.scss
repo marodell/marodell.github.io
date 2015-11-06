@@ -1,0 +1,30 @@
+// @todo add support for mobile/tablets
+
+
+// @todo move this
+html {
+	font-size: 20px;
+}
+
+section {
+	border-bottom: 2px solid #fff;
+	padding-bottom: 30px;
+	margin-bottom: 30px;
+
+	&:first-child {
+		margin-top: 30px;
+	}
+
+	&:last-child {
+		border-bottom: 0;
+		margin-bottom: 0;
+	}
+}
+
+// @import 'segements/theme';
+@import 'segments/rail';
+@import 'segments/chevron';
+@import 'segments/animation';
+@import 'segments/options';
+@import 'segments/inputs';
+@import 'segments/config';
