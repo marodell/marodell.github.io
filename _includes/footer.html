@@ -13,7 +13,5 @@
 	</div>
 
 	<div id="copyright" class="copyright">© 2015 Matthew Dowdell</div>
-	{% if jekyll.environment != 'development' %}
-		<div id="lastRevision" class="revision">{% include lastupdated %}</div>
-	{% endif %}
+	<div id="lastRevision" class="revision">Last updated: {% include lastupdated.html %}</div>
 </div>
