@@ -39,3 +39,4 @@ LAST_UPDATED="_includes/lastupdated.html"
 
 rm $LAST_UPDATED
 echo "$now" > $LAST_UPDATED
+git add $LAST_UPDATED
