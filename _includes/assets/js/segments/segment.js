@@ -470,7 +470,7 @@
 			},
 
 			/**
-			 * Rebuild the highlighting for letters (and inputs?) after the segments are moved on the rail.
+			 * Rebuild the highlighting for letters after the segments are moved on the rail.
 			 */
 			rebuildHighlights: function (index) {
 				var ids = ['DP', 'G', 'F', 'E', 'D', 'C', 'B', 'A'],

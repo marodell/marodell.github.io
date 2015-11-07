@@ -28,13 +28,6 @@ unsupported broswers:
 		<span id="chevronRight" class="chevron chevron-right ani-quick" title="Move right"></span>
 	</div>
 </section>
-<section id="options" class="options">
-	<div id="optionsColours" class="colours">
-		{% for colour in site.segments.colours %}
-			<span id="coloursPick{{ colour | capitalize }}" class="pick {{ colour }}" data-colour="{{colour}}"></span>
-		{% endfor %}
-	</div>
-</section>
 <section id="inputs" class="inputs">
 	<div id="inputsLetters" class="letters">
 		{% for i in (0..3) %}
@@ -59,6 +52,13 @@ unsupported broswers:
 	</div>
 	<div id="inputsHexCombined" class="hex-combined">
 		<span class="combined ani-quick">0x00000000</span>
+	</div>
+</section>
+<section id="options" class="options">
+	<div id="optionsColours" class="colours">
+		{% for colour in site.segments.colours %}
+			<span id="coloursPick{{ colour | capitalize }}" class="pick {{ colour }}" data-colour="{{colour}}"></span>
+		{% endfor %}
 	</div>
 </section>
 <section id="config" class="config">

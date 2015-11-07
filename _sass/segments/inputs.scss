@@ -2,11 +2,7 @@
  * Sass for inputs section of segments page
  */
 
-// @todo move this
 @import 'mixins';
-
-// @todo set colour for binary and hex
-//       and maybe hex?
 
 .inputs {
 	.view {
@@ -40,7 +36,7 @@
 	.binary,
 	.hex,
 	.hex-combined {
-		font-family: "Lucida Console", Monaco, monospace;
+		font-family: 'Ubuntu Mono', monospace;
 	}
 
 	.letters {
